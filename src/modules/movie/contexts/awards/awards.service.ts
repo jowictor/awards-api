@@ -24,10 +24,15 @@ export class AwardsServiceImpl implements AwardsService {
     winners.forEach((movie) => {
       const producers = movie.producers.split(',').map((p) => p.trim());
       producers.forEach((producer) => {
-        if (!producerMap[producer]) {
-          producerMap[producer] = [];
-        }
-        producerMap[producer].push(movie.year);
+        const individualProducers = producer
+          .split(/,| and /)
+          .map((p) => p.trim());
+        individualProducers.forEach((p) => {
+          if (!producerMap[p]) {
+            producerMap[p] = [];
+          }
+          producerMap[p].push(movie.year);
+        });
       });
     });
 

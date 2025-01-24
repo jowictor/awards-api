@@ -9,7 +9,7 @@
     "build": "nest build",
     "start": "NODE_OPTIONS=\"-r dotenv/config\" nest start",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test:e2e": "CSV_FILE=movielist-e2e-test.csv jest --config ./jest-e2e.json"
+    "test:e2e": "CSV_FILE=movielist.csv jest --config ./jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.15",
